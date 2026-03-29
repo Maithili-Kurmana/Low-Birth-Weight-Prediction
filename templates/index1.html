@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetal Birth Weight Prediction</title>
+
+<style>
+body {
+    background-image: url("{{ url_for('static', filename='baby.jpg') }}"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+form {
+    margin-top: 30px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Fetal Birth Weight Prediction</h1>
+
+<form action="/production/predict" method="POST">
+
+<input type="text" name="MAGE" placeholder="Mother Age"><br>
+<input type="text" name="FAGE" placeholder="Father Age"><br>
+<input type="text" name="GAINED" placeholder="Weight Gained"><br>
+<input type="text" name="VISITS" placeholder="Hospital Visits"><br>
+<input type="text" name="TOTALP" placeholder="Total Pregnancies"><br>
+<input type="text" name="BDEAD" placeholder="Birth Dead"><br>
+<input type="text" name="TERMS" placeholder="Terms"><br>
+<input type="text" name="LOUTCOME" placeholder="Last Outcome"><br>
+<input type="text" name="WEEKS" placeholder="Weeks"><br>
+<input type="text" name="CIGNUM" placeholder="Cigarettes"><br>
+<input type="text" name="DRINKNUM" placeholder="Drinks"><br>
+<input type="text" name="UTERINE" placeholder="Uterine"><br><br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+<br><br>
+
+<h2>{{prediction_text}}</h2>
+<h2>{{prediction_text1}}</h2>
+
+</body>
+</html>

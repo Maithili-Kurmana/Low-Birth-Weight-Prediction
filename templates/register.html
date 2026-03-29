@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>Low Birth Weight Prediction</title>
+<head>
+<style>
+body {
+    background-image: url("{{ url_for('static', filename='baby1.jpg') }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+a:link,a:visited {
+    background-color: green;
+    padding:15px 25px;
+    color:white;
+    text-align:center;
+    display:inline-block;
+}
+a:hover,a:active {
+    background-color: darkgreen;
+}
+</style>
+</head>
+
+<body>
+<div class="login" align="center">
+<b><font style="color:black" "font-family=TimesNewRoman" size="5"><h1>REGISTER</h1></font></b><br>
+
+<form method="POST" action="/register">
+    <input type="text" name="username" placeholder="Enter username" required>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <button type="submit">Register</button>
+</form>
+
+<br><br>
+<b><font style="color:black" "font-family:TimesNewRoman" size="7">{{text}}</font></b><br><br>
+
+<a href="{{ url_for('login') }}">Login</a>
+
+<br><br></div>
+
+<p>Already have an account? <a href="/login">Login here</a></p>
+
+</body>
+</html>
